@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const Hello = (props) => {
-  return (<h1>Hello, { props.firstName } { props.lastName }</h1>)
+const Hello = ({ firstName, lastName }) => {
+  return (<h1>Hello, { firstName } { lastName }</h1>)
 }
 
 ReactDOM.render(
