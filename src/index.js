@@ -1,15 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Counter from './components/Counter'
 
-const Hello = ({ firstName, lastName }) => {
-  return (<h1>Hello, { firstName } { lastName }</h1>)
-}
 
 ReactDOM.render(
-  <Hello
-    firstName={'Arnupharp'}
-    lastName={'Viratanapanu'}
-  />,
+  <Counter label="I'm a counter" />,
   document.getElementById('react-root')
 )
 
