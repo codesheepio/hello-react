@@ -1,8 +1,10 @@
 var path = require('path')
+var webpack = require('webpack')
 module.exports = {
   devtool: 'eval-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
     path.resolve('src/index.js'),
   ],
   output: {
@@ -14,7 +16,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel', // or 'babel-loader'
+        loader: 'babel!webpack-module-hot-accept', // or 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -22,4 +24,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  devServer: {
+    hot: true,
+  }
 }
