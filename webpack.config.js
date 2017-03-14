@@ -3,7 +3,7 @@ var webpack = require('webpack')
 module.exports = {
   devtool: 'eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
+    'react-hot-loader/patch',
     'webpack/hot/only-dev-server',
     path.resolve('src/index.js'),
   ],
@@ -13,14 +13,14 @@ module.exports = {
     publicPath: '/dist/',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel!webpack-module-hot-accept', // or 'babel-loader'
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
-        loader: 'style!css',
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
