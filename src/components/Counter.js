@@ -18,7 +18,7 @@ export default class Counter extends Component {
       <div className='counter'>
         <h1>{this.props.label}</h1>
         <h2>{this.state.counter}</h2>
-        <button onClick={this.addCounter}>+1</button>
+        <button onClick={this.addCounter}>+2</button>
       </div>
     )
   }

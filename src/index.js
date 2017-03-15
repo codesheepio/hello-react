@@ -12,6 +12,7 @@ const render = (Counter) => (
 render(Counter)
 if (module.hot) {
   module.hot.accept('./components/Counter', () => {
+    // render(require('./components/Counter').default)
     render(Counter)
   })
 }
