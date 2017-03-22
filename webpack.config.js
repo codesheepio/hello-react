@@ -11,14 +11,14 @@ module.exports = {
     publicPath: '/dist/',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel', // or 'babel-loader'
+        use: ['babel-loader'], // or 'babel-loader'
       },
       {
         test: /\.css$/,
-        loader: 'style!css',
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
