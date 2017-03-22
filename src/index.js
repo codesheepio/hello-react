@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
 import Counter from './components/Counter'
 import './style.css'
 
 const render = (Counter) => (
   ReactDOM.render(
-    <Counter label="I'm a counter" />,
+    <AppContainer>
+      <Counter label="I'm a counter" />
+    </AppContainer>,
     document.getElementById('react-root')
   )
 )
