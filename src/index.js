@@ -1,22 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import Counter from './components/Counter'
+import CounterContainer from './components/CounterContainer'
 import './style.css'
 
-const render = (Counter) => (
+const render = (CounterContainer) => (
   ReactDOM.render(
     <AppContainer>
-      <Counter label="I'm a counter" />
+      <CounterContainer />
     </AppContainer>,
     document.getElementById('react-root')
   )
 )
-render(Counter)
+render(CounterContainer)
 if (module.hot) {
-  module.hot.accept('./components/Counter', () => {
+  module.hot.accept('./components/CounterContainer', () => {
     // render(require('./components/Counter').default)
-    render(Counter)
+    render(CounterContainer)
   })
 }
 
